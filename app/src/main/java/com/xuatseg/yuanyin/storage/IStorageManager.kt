@@ -130,8 +130,8 @@ enum class EventType {
  * 存储错误
  */
 sealed class StorageError {
-    data class DatabaseError(val error: DatabaseError) : StorageError()
-    data class FileSystemError(val error: FileStorageError) : StorageError()
+    data class DatabaseError(val error: com.xuatseg.yuanyin.storage.database.DatabaseError) : StorageError()
+    data class FileSystemError(val error: com.xuatseg.yuanyin.storage.file.FileStorageError) : StorageError()
     data class MaintenanceError(val message: String) : StorageError()
     data class ConfigurationError(val message: String) : StorageError()
 }
